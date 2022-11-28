@@ -13,7 +13,7 @@ const TaskInput =()=> {
   const dispatch = useDispatch()
   const [taskNameInput, setTaskNameInput] = useState("");
   const [taskDescriptionInput, setDescriptionInput] = useState("");
-  const [dateInput, setDateInput] = useState("");
+  const [taskDateInput, setTaskDateInput] = useState("");
 
 
   const postsCollectionRef = collection(db, "posts");
@@ -24,7 +24,7 @@ const TaskInput =()=> {
 
   const createPost = (downloadFileImage="")=>async (dispatch) => {
     
-    let newDate = dateInput ? dateInput : ""
+    let newDate = taskDateInput ? taskDateInput : ""
     await addDoc(postsCollectionRef, {
       taskName:taskNameInput,
       taskDescription:taskDescriptionInput,
@@ -32,7 +32,7 @@ const TaskInput =()=> {
       isCompleted:false,
       author: { name: auth.currentUser.displayName, id: auth.currentUser.uid },
       downloadImageUrl:downloadFileImage
-    }).then(docRef => {dispatch(addNewTaskAC({id:docRef.id, downloadImageUrl:downloadFileImage, name:auth.currentUser.displayName, userId:auth.currentUser.uid, taskName:taskNameInput,taskDescription:taskDescriptionInput, date:dateInput }))})};
+    }).then(docRef => {dispatch(addNewTaskAC({id:docRef.id, downloadImageUrl:downloadFileImage, name:auth.currentUser.displayName, userId:auth.currentUser.uid, taskName:taskNameInput,taskDescription:taskDescriptionInput, date:taskDateInput }))})};
   
   const titleHandleChange = (e)=>{
     setTaskNameInput(e.currentTarget.value)
@@ -78,7 +78,7 @@ const TaskInput =()=> {
   }
 
   const onDataChange = (e)=>{
-    setDateInput(e.currentTarget.value)
+    setTaskDateInput(e.currentTarget.value)
   }
 
   return (
@@ -96,7 +96,7 @@ const TaskInput =()=> {
              <input className='file-input' type="file" onChange = {onFileChange}/>
              <input className='date-input' type="date" /*min={dayjs().format("YYYY-MM-DD")}*/   onChange = {(e)=>onDataChange(e)}/>
 
-            <textarea className="description-textarea" placeholder='Task Description' onChange={descriptionHandleChange} ></textarea>
+            <textarea className="description-textarea" placeholder='Task Description' value={taskDescriptionInput} onChange={descriptionHandleChange} ></textarea>
             <button className='submitInput-button' onClick={handleSubmit}>Add</button>
             </div>
           
