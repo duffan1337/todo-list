@@ -1,0 +1,57 @@
+{
+  "name": "todolistvelbex",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://duffan1337.github.io/ToDoList/",
+  "dependencies": {
+    "@craco/craco": "^6.4.5",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^13.2.1",
+    "axios": "^0.26.1",
+    "craco-less": "^2.0.0",
+    "dayjs": "^1.11.6",
+    "eslint": "^8.28.0",
+    "firebase": "^9.14.0",
+    "i": "^0.3.7",
+    "npm": "^9.1.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-firebase-hooks": "^5.1.1",
+    "react-redux": "^7.2.6",
+    "react-router": "^6.2.1",
+    "react-router-dom": "^6.4.3",
+    "react-scripts": "5.0.0",
+    "redux-thunk": "^2.4.1",
+    "web-vitals": "^2.1.0"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "firebase-tools": "^11.16.1"
+  }
+}

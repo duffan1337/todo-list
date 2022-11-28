@@ -1,0 +1,60 @@
+@color: #424242;
+@border:  1px solid @color;
+
+.textarea{
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+   border: 1px solid #424242;
+   border-radius: 20px;
+    
+}
+
+ .title-input {
+    font-family: 'Lato', sans-serif;
+    color: @color;
+    font-weight: 700;
+  
+    padding: 10px 15px;
+    width: 400px;
+    border: @border;
+    border-radius: 100px;
+    margin: 10px;
+
+    @media screen and (max-width: 478px) {
+      max-width: 250px;
+    }
+    
+  }
+
+  .file-input{
+    font-family: 'Lato', sans-serif;
+    color: @color;
+    max-width: 320px;
+    border: @border;
+    padding: 10px 15px;
+    border-radius: 30px;
+    margin: 10px;
+  }
+  .date-input{
+    font-family: 'Lato', sans-serif;
+    color: @color;
+    max-width: 320px;
+    border: @border;
+    padding: 10px 15px;
+    border-radius: 30px;
+    margin: 10px;
+  }
+
+  .description-textarea{
+    font-family: 'Lato', sans-serif;
+    max-width: 300px;
+    max-height: 200px;
+    border-radius: 15px;
+    border: @border;
+    margin: 10px;
+    padding:5px;
+  }
+  .submitInput-button{
+    margin: 10px;
+  }

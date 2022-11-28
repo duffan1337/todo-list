@@ -1,0 +1,188 @@
+@color: #424242;
+@border:  1px solid @color;
+
+.todo__item {
+    width: 100%;
+    height: 100%;
+    margin: 50px 0px;
+    padding: 25px 25px;
+
+  
+    box-shadow: 0px 0px 25px 0px rgba(66, 66, 66, 0.2);
+    border-radius: 20px;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .todo__item__text {
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .strike {
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
+  
+  .todo__item__text__header {
+    color: #424242;
+    font-size: 18px;
+    
+  }
+  .changed-block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .todo__item__text__parag {
+    color: #424242;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 10px;
+    opacity: 0.8;
+    
+  }
+  
+  .todo__item__buttons {
+    padding-top: 2  0px;
+    cursor: pointer;
+  }
+  
+ 
+  .completed-input{
+    width: 20px;
+    height: 20px;
+  }
+  button {
+    padding: 5px 20px;
+    background: #fff;
+    border: 1px solid #424242;
+    border-radius: 100px;
+  
+    font-family: 'Lato', sans-serif;
+    color: #424242;
+    font-size: 14px;
+    font-weight: 700;
+  
+    transition: 0.3s;
+  }
+  
+  button:hover {
+    background: #424242;
+    color: #fff;
+  }
+  
+  button:not(:last-child) {
+    margin-right: 15px;
+  }
+
+
+  .textarea{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid #424242;
+    border-radius: 20px;
+     
+ }
+
+ 
+  .titleChange-input {
+     font-family: 'Lato', sans-serif;
+     color: @color;
+     font-weight: 700;
+   
+     padding: 10px 15px;
+     max-width: 400px;
+     border: @border;
+     border-radius: 100px;
+     margin: 10px;
+     
+   }
+   .item-description{
+    display: flex;
+    white-space: wrap;
+   }
+   .fileChange-input{
+     font-family: 'Lato', sans-serif;
+     color: @color;
+     max-width: 320px;
+     border: @border;
+     padding: 10px 15px;
+     border-radius: 30px;
+     margin: 10px;
+   }
+   .dateChange-input{
+     font-family: 'Lato', sans-serif;
+     color: @color;
+     max-width: 320px;
+     border: @border;
+     padding: 10px 15px;
+     border-radius: 30px;
+     margin: 10px;
+   }
+ 
+   .descriptionChange-textarea{
+     font-family: 'Lato', sans-serif;
+     max-width: 300px;
+     max-height: 200px;
+     border-radius: 15px;
+     border: @border;
+     margin: 10px;
+     padding:5px;
+   }
+  
+   h1{
+    font-size: 32px;
+   }
+
+   .file-input{
+    font-family: 'Lato', sans-serif;
+    background-color: white;
+    color: @color;
+    max-width: 320px;
+    border: @border;
+    padding: 10px 15px;
+    border-radius: 30px;
+    margin: 10px;
+  }
+
+
+  
+  .error {
+    box-shadow: 0px 0px 20px 0px rgba(247, 0, 0, 0.2);
+    border: 1px solid red;
+  }
+  
+
+  .bx-trash {
+    font-size: 18px;
+    color: #424242;
+    opacity: 0.5;
+    transition: 0.3s;
+  }
+  
+  .item-field{
+    width: 100%;
+    margin-top: 15px;
+    position: relative;
+  }
+  .bx-trash:hover {
+    opacity: 1;
+  }
+  
+  .textarea {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .green {
+    background-color: rgba(47, 251, 2, 0.4);
+  }
+  .red {
+    background-color: rgba(255, 0, 0, 0.4);
+  }
