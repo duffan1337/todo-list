@@ -1,20 +1,19 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import './taskItem.less';
-import { changeTaskTextAC, completeTaskTextAC, deleteTask,} from "../../Redux/tasksActions";
+import { changeTaskTextAC, completeTaskTextAC, deleteTask, updateTask,} from "../../Redux/tasksActions";
 import dayjs from "dayjs";
 import { doc, updateDoc } from "firebase/firestore";
 import { db,  app } from "../../firebase-config";
 import 'firebase/storage';
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage';
 
-function TaskItem({todo, handleToggle}) {
+function TaskItem({todo}) {
 
     const dispatch  = useDispatch()
     const [titleInput, setTitleInput] = useState(todo.taskName);       // введенное значение в режиме редактирования
     const [descriptionInput, setDescriptionInput] = useState(todo.taskDescription);       // введенное значение в режиме редактирования
     const [dateInput, setdateInput] = useState(todo.date);       // введенное значение в режиме редактирования
-    console.log("titleInput", titleInput)
     const [uploadImageFile, setUploadImageFile] = useState(null)
 
     const [isChanged, setIsChanged] = useState(false)       //режим редактирования
@@ -30,18 +29,6 @@ function TaskItem({todo, handleToggle}) {
             setdateInput(e.currentTarget.value)
         }
         
-        const updateTask = (props) =>async(dispatch)=>{ 
-            let NFU = props.newFileUrl ? props.newFileUrl : ""       
-            const docRef = doc(db, "posts", props.id);
-                console.log("DAFAFAFAFSFSDS",props)
-             await updateDoc(docRef,{
-                "taskName":props.taskName,
-                "taskDescription":props.taskDescription,
-                "date":props.date,
-                "downloadImageUrl":NFU
-                }).then(()=>{dispatch(changeTaskTextAC({id:props.id, downloadImageUrl:props.newFileUrl,  date:props.date, taskName:props.taskName, taskDescription:props.taskDescription}))})
-                
-        };
     
         function handleSubmit(e) {
             e.preventDefault()
@@ -54,7 +41,10 @@ function TaskItem({todo, handleToggle}) {
             setUploadImageFile(file)
         
           }
-        
+        	/**
+	 * upload image asynchronous function  
+	 * 
+	 */
     const uploadImage = async() =>{
         if(uploadImageFile === null)
         {

@@ -22,6 +22,11 @@ const TaskInput =()=> {
 
 
 
+
+ /**
+	 * function that creates a post and fills it on the server 
+	 * @param {downloadFileImage} -link to download the file
+	 */
   const createPost = (downloadFileImage="")=>async (dispatch) => {
     
     let newDate = taskDateInput ? taskDateInput : ""
@@ -43,7 +48,10 @@ const TaskInput =()=> {
   }
   
 
- 
+ /**
+	 * upload image asynchronous function  
+	 * 
+	 */
     const uploadImage = async() =>{
       if(uploadImageFile === null)
       {

@@ -52,6 +52,7 @@
     ]
   },
   "devDependencies": {
-    "firebase-tools": "^11.16.1"
+    "firebase-tools": "^11.16.1",
+    "jsdoc": "^4.0.0"
   }
 }

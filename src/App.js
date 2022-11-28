@@ -12,10 +12,15 @@ import { signOut } from "firebase/auth";
 
 const App = ()=>{
 
+	
 	const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
 	const postsCollectionRef = collection(db, "posts");
 	const dispatch = useDispatch()
 
+		/**
+	 * Function logout
+	 * 
+	 */
 	const signUserOut = () => {
 		signOut(auth).then(() => {
 		  localStorage.clear();
@@ -24,7 +29,10 @@ const App = ()=>{
 		});
 	  };
 
-
+	  	/**
+	 * get tasks from server
+	 * 
+	 */
 	 useEffect(() => {
 		const getPosts = async () => {
 		  const data = await getDocs(postsCollectionRef);
@@ -40,8 +48,6 @@ const App = ()=>{
 			todos:state.tasks.tasks,
 		}
 	})
-	console.log("todos",todos)
-
 
 	return (
 		<Router basename="/">
