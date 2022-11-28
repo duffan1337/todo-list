@@ -44,7 +44,7 @@ const App = ()=>{
 
 
 	return (
-		<Router basename="/new_vehicle_management">
+		<Router basename="/">
 			
 		  <div>
 			{!isAuth ? (

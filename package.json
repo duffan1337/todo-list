@@ -2,7 +2,7 @@
   "name": "todolistvelbex",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://duffan1337.github.io/ToDoList/",
+  "homepage": ".",
   "dependencies": {
     "@craco/craco": "^6.4.5",
     "@testing-library/jest-dom": "^5.14.1",
